@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Nothing-pc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jersey+10&display=swap" rel="stylesheet">
+<style>
+    body , html {
+    margin: 0;
+    width: 100vw;
+    height: fit-content;
+    background: #F4F4F4;
+overflow: hidden;
+--nav: 5vw;
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: center;
+--shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #000 !important;
+}
+input:focus {
+    outline: none;
+}
+img {
+    width: 100%;
+}
+.nav {
+    position: fixed;
+    height: var(--nav);
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    --dp: 79vw;
+    --nlogo: 20vw;
+--nimg: 12vw;
+z-index: +999999;
+}
+.nlogo {
+    height: 100%;
+    width: calc(100vw - var(--dp));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nlogo img {
+    width: var(--nimg);
+}
+.dp {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: var(--dp);
+    background-color: white;
+    border: 0.1vh solid transparent;
+    border-top-left-radius: 10vh;
+    border-bottom-left-radius: 10vh;
+    display: flex;
+    justify-content: center;
+}
+.nlinks {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+--nlb: 0.2vw;
+--nlw: fit-content;
+--nlfs: 1.5vw;
+--nlh: 6vw;
+justify-content: center;
+}
+.acc {
+    position: absolute;
+    right: 0;
+    font-size: 1vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+font-size: 2.5vw;
+padding: 0 2vw;
+color: #000;
+}
+.nlinks a:first-child::after {
+height: var(--nlb);
+}
+.home , .dhome {
+    padding: 0 2svw;
+    margin: 0;
+}
+.dhome strong{
+    height: var(--nlh);
+    width: 8vw;
+    display: flex;
+font-size: var(--nlfs);
+}
+.dhome {
+    position: relative;
+    height: var(--nlh);
+padding: 0;
+}
+.dhome strong {
+    position: relative;
+    display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+color: #000;
+}
+.dhome strong::after , .home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+height: 0.0vh;
+width: 100%;
+background-color: black;
+transition: 0.3s;
+translate: 0 0.1vw;
+z-index: +1;
+}
+.dcon {
+    position: fixed;
+    top: var(--nav);
+    left: 0;
+    width: 100vw;
+    background-color: #FFFFFF;
+    overflow: hidden;
+height: fit-content;
+visibility: hidden;
+transition: 0.0s;
+opacity: 0;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.dhome:hover .dcon {
+    visibility: visible;
+opacity: 1;
+}
+.dhome:hover strong::after {
+    height: var(--nlb);
+
+}
+.home {
+    position: relative;
+    height: var(--nlh);
+    width: var(--nlw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--nlfs);
+    color: black;
+
+}
+.home:hover::after {
+    height: var(--nlb);
+}
+.phones {
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+--pimg: 12vw;
+padding: 2vw 0;
+}
+.phone {
+    flex-shrink: 0;
+    width: 20vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0;
+padding: 0;
+}
+.phone-img {
+    width: 100%;
+    height: var(--pimg);
+    display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+.phone-img img {
+    width: 7vw;
+transition: 0.3s;
+}
+.phone-info {
+    height: calc(16vw - var(--pimg));
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.phone-info h1 {
+    font-weight: 700;
+    padding: 0.2vw 0;
+ }
+.phone-info h1 strong {
+    margin: 0;
+    font-size: 1vw;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+}
+.phone-info h1 strong::after {
+    display: none;
+}
+.phone:hover .phone-img img {
+    scale: 1.1;
+}
+.vps {
+position: relative;
+    left: 100%;
+    translate: -100% -1vw;
+margin: 0;
+display: flex;
+justify-content: center;
+width: 20vw;
+height: fit-content;
+}
+.vps strong {
+    width: fit-content;
+    height: fit-content;
+border: 0.1px solid transparent;
+padding: 0 2vw;
+color: #FFFFFF;
+background-color: #000;
+border-radius: 10vh;
+padding: 0.8vw 2vw;
+font-size: 1vw;
+}
+.vps strong::after {
+    display: none;
+}
+.allp {
+    justify-content: flex-start;
+overflow-x: scroll;
+}
+.allp::-webkit-scrollbar {
+    display: none;
+}
+.slider {
+ position: absolute;
+ top: var(--nav);
+    height: 40vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+padding: 0;
+--bar: 0.2vw;
+overflow: hidden;
+}
+.slider::-webkit-scrollbar {
+    display: none;
+}
+#sc1{
+    margin-left: 4vw;
+}
+.slider-con {
+    position: relative;
+    height: 90%;
+width: 90vw;
+    border: 0.1px solid transparent;
+    border-radius: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+padding: 0;
+background-color: white;
+overflow: hidden;
+transition: 1s;
+background-color: #000;
+--duration: 30s linear;
+margin: 0 0vw;
+margin-left: 0;
+}
+.slider .slider-con:nth-child(2) {
+    margin-left: 1vw;
+}
+.slider .slider-con:nth-child(3) {
+    margin-left: 1vw;
+}
+.slider-con iframe {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 180%;
+    height: 180%;
+}
+#bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+height: 5vh;
+    width: 90%;
+z-index: +1;
+height: var(--bar);
+display: flex;
+}
+.barp {
+    position: absolute;
+    z-index: +1;
+height: 100%;
+    width: 0;
+    background-color: aqua;
+    transition: var(--duration);
+
+}
+.slider-con a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes if {
+    0% {
+opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+}
+
+@keyframes barp3 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+#fade {
+
+position: absolute;
+height: 100%;
+width: 100%;
+background-color: black;
+opacity: 0;
+}
+.scin {
+    position: absolute;
+    bottom: 0;
+    height: 10vw;
+    width: 100%;
+   background: linear-gradient(to bottom, transparent ,black);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+justify-content: flex-end;
+
+}
+
+/* #sc1n h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+padding: 0vw 5vw;
+padding-bottom: 0vw;
+margin: 0;
+font-size: 2.5vw;
+font-family: "Jersey 15", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+#sc1n h2:last-child {
+    padding-bottom: 1vw;
+} */
+.scn {
+    position: absolute;
+    bottom:  0;
+    padding: 1vw 5vw;
+    display: flex;
+    color: white;
+flex-direction: column;
+font-size: 2.5vw;
+transition: 0.4s;
+}
+.scn h1 {
+    font-family: "Jersey 15", sans-serif;
+font-weight: 400;
+  font-style: normal;
+}
+.scn h1:last-child {
+    height: fit-content;
+    padding: 0.3vw 0;
+}
+#sc2n , #sc3n{
+visibility: hidden;
+opacity: 0;
+}
+.os {
+    position: relative;
+    height: 40vw;
+    width: 90vw;
+    border: 0.1vh solid transparent;
+    border-radius: 10vh;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+background-color: #FFFFFF;
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.os-bound {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 15% -50%;
+    height: 50vw;
+    width: 50vw;
+    background-color: #1A1A1A;
+    border: 0.1vh solid transparent;
+    border-radius: 50%;
+}
+.os-gif {
+    position: absolute;
+    right: 10vw;
+    top: 50%;
+    translate: 0% -50%;
+width: 20vw;
+}
+.os-info {
+    height: 100%;
+    width: var(--bound);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+--bound: 42.5vw;
+--boundr: 32.5vw;
+}
+.os-info h1 {
+    font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+font-size: 2.5vw;
+font-weight: 600;
+padding: 1vw 0;
+height: fit-content;
+width: fit-content;
+max-width: var(--bound);
+}
+.os-info h6 {
+width: var(--boundr);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1vw;
+font-weight: 400;
+letter-spacing: 0.1vw;
+line-height: 1.5vw;
+}
+.os-info li:first-child {
+    padding-top: 2vw;
+}
+.os-info li {
+    width: var(--boundr);
+padding: 0.5vw 0;
+font-size: 1vw;
+font-weight: 400;
+font-family: Arial, Helvetica, sans-serif;
+translate: 1vw 0;
+}
+.exp {
+    position: relative;
+translate: 5vw 1vw;
+    height: 3vw;
+    width: 10vw;
+    border: 0.2vw solid black;
+    border-radius: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+overflow: hidden;
+align-self: flex-start;
+
+}
+.exp span {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0.1vw;
+    background-color: black;
+    left: 1vw;
+transition: 0.3s;
+translate: 0;
+}
+.exp strong {
+    font-family: "Archivo Black", sans-serif;
+font-size: 1vw;
+z-index: +1;
+font-weight: 400;
+}
+.exp::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: black;
+transition: 0.3s;
+
+}
+.exp:hover::after {
+width: 100%;
+}
+.exp:hover span {
+    left: 100%;
+    translate: -100% 0;
+}
+.exp:hover strong {
+    color: #FFFFFF;
+}
+.glyph {
+    height: 35vw;
+    position: relative;
+    width: 90vw;
+    border: 0% solid transparent;
+    border-top-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+background-color: #FFFFFF;
+margin-top: 2vw; 
+--rg: 25vw;
+--rgw: 40vw;
+--gs: 55.2vw;
+}
+.glyph::after {
+    content: '';
+    width: 29.5vw;
+    height: 100%;
+background-color: #000;
+position: absolute;
+top: 0;
+right: 0;
+}
+.glyph-cir {
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    background-color: #000;
+    border: 0.1vh solid transparent;
+    border-radius: 50%;
+ bottom: 0;
+ right: 0;
+ translate: -10% 36%;   
+}
+.bbox {
+    height: 30vw;
+    width: 100vw;
+    background-color: #000;
+}
+.gslider {
+    position: relative;
+    height: 100%;
+    width: var(--gs);
+    position: absolute;
+    right: 0;
+    z-index: +1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.rgslider {
+    height: var(--rg);
+    width: 30vw;
+    /* background-color: green; */
+display: flex;
+overflow: hidden;
+}
+.rrgslider {
+    position: relative;
+ right: 0px;
+    height: var(--rg);
+    width: var(--rgw);
+display: flex;
+overflow: scroll;
+flex-direction: row;
+overflow: hidden;
+}
+.back , .next{
+    position: absolute;
+width: 7.6vw;
+height: var(--rg);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.back i , .next i {
+    font-size: 3vw;
+    color: white;
+}
+.back {
+    left: 0;
+translate: 4vw;
+}
+.next {
+    right: 0;
+    translate: -4vw;
+    
+}
+#push {
+    position: relative;
+    left: 0;
+    height: var(--rg);
+    width: 0;
+background-color: aqua;
+transition: 0.0s;
+}
+.gcon {
+    position: relative;
+    height: 100%;
+    width: var(--rgw);
+    flex-shrink: 0;
+   }
+#g1 img , #g2 img , #g3 img {
+position: absolute;
+left: 50%;
+top: 50%;
+translate: -90% -50%;
+    width: 30%;
+}
+#g1 {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#g2 {
+    /* background-color: pink; */
+}
+#g3 {
+    /* background-color: orange; */
+}
+#g4 {
+}
+#bs , #ns {
+    position: absolute;
+    height: 5vw;
+    width: 100%;
+}
+#bs {
+}
+#ns {
+    visibility: hidden;
+}
+#g5 {
+}
+.glyph-heading {
+    position: absolute;
+    right: 10vw;
+    height: 8vw;
+    width: 35vw;
+    z-index: +1;
+    display: flex;
+    align-items: flex-end;
+}
+.glyph-h {
+    position: relative;
+    height: 5vw;
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+--gh: 11vw;
+}
+.glyph-h h1 {
+width: var(--gh);
+    font-size: 1.1vw;
+    color: white;
+display: flex;
+justify-content: center;
+}
+.glyph-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    height: 0.25vw;
+    width: calc(var(--gh) * 3);
+    display: flex;
+    justify-content: flex-start;
+}
+.invisible-indicator , .visible-indicator {
+    height: 100%;
+    width: 0;
+}
+#in-indi {
+}
+#vi-indi {
+    background-color: #FFFFFF;
+}
+.gabout {
+    position: absolute;
+    width: 29.4vw;
+    height: 90%;
+    padding: 2vw 2vw;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.gabout h1 {
+    font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+font-size: 2.3vw;
+font-weight: 600;
+padding: 0vw 0;
+padding-bottom: 1vw;
+height: fit-content;
+width: fit-content;
+}
+.gabout h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    letter-spacing: 0.1vw;
+    line-height: 1.5vw;
+    width: 24vw;   
+}
+.sphone {
+    height: fit-content;
+    width: 12vw;
+    display: flex;
+justify-content: space-evenly;
+align-items: flex-start;
+flex-direction: column;
+padding-top: 2vw;
+align-self: flex-start;
+translate: 3vw 0;
+}
+.sphone img {
+    width: 4.8vw;
+height: fit-content;
+}
+/* .gabout ul li:first-child {
+    padding-top: 2vw;
+}
+.gabout ul li {
+    padding: 0.5vw 0;
+font-size: 1vw;
+font-weight: 500;
+font-family: Arial, Helvetica, sans-serif;
+translate: 0vw 0;
+width: 24vw;
+}
+.expe {
+    translate: 3vw 1vw;
+} */
+.sphone2 {
+    height: fit-content;
+}
+.sphone-row {
+    position: relative;
+    display: flex;
+justify-content: space-between;
+width: 100%;
+padding-bottom: 1vw;
+align-items: center;
+}
+.view i {
+    position: absolute;
+    font-size: 2.7vw;
+}
+.view {
+    position: absolute;
+    right: 0;
+    translate: -2vw 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.view i {
+    transition: 0.3s;
+}
+.view:hover i:first-child {
+    translate: 0.8vw 0;
+}
+.cmf {
+    width: 100vw;
+    background-color: black;
+display: flex;
+height: fit-content;
+flex-direction: column;
+align-items: center;
+--ph: 24vw;
+--pw: 20vw;
+--cmi: 18vw;
+}
+.cmf-iframe {
+    position: relative;
+height: 30vw;
+width: 90%;
+border: 0.1px solid transparent;
+border-radius: 10vh;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cmf-iframe p {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.cmf-iframe iframe {
+    position: absolute;
+    height: 250%;
+    width: 250%;
+}
+.cmf-heading {
+    height: 7vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.cmf-heading strong {
+     font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  padding: 0 5vw;
+  font-size: 2.5vw;   
+}
+.cmf-slider {
+    position: relative;
+    right: 0%;
+    height: 25vw;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+align-items: center;
+overflow: hidden;
+}
+
+.cm-pro {
+    height: var(--ph);
+    width: var(--pw);
+border: 0.1px solid transparent;
+border-radius: 5vh;
+overflow: hidden;
+padding: 0 1.2vw;
+}
+#cmf-pusher {
+    height: 100%;
+    width: 24vw;
+overflow: hidden;
+display: flex;
+justify-content: flex-start;
+padding: 0;
+}
+.cm-pro-img {
+    width: 100%;
+    height: var(--cmi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+border: 0.01px solid transparent;
+border-radius: 5vh;
+}
+.cm-pro-img img {
+    width: 60%;
+}
+.cm-pro-info {
+    height: calc(var(--ph) - var(--cmi));
+    width: 100%;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.cm-pro-info h1 {
+    width: fit-content;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5vw;
+color: white;
+}
+.cm-pro-info strong {
+    background-color: #EE5235;
+font-size: 1vw;
+padding: 0.5vw 2vw;
+margin: 0.5vw 0;
+}
+.cmf-back {
+    height: 4vw;
+    width: 4vw;
+    border: 0.01px solid transparent;
+    background-color: white;
+    position: absolute;
+left: 0;
+top: 50%;
+display: flex;
+align-items: center;
+translate: -50% -50%;
+z-index: +1;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cmf-pro-parent {
+    position: relative;
+    height: 25vw;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+.cmf-pro-parent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    translate: -100% 0;
+    height: 100%;
+    width: 7vw;
+    background-color: #000;
+z-index: +1;
+}
+.cmf-back i , .cmf-next i {
+    font-size: 2vw;
+}
+.cmf-next {
+    height: 4vw;
+    width: 4vw;
+    border: 0.01px solid transparent;
+    background-color: white;
+    position: absolute;
+right: 0;
+top: 50%;
+display: flex;
+align-items: center;
+translate: 50% -50%;
+z-index: +1;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#cmf-bs , #cmf-ns{
+    position: absolute;
+    height: 5vw;
+    width: 5vw;
+}
+#cmf-ns {
+    visibility: hidden;
+}
+.design {
+    height: fit-content;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5vw;
+
+}
+.design-heading {
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.7vw;
+    padding: 8vw 0;
+    padding-bottom: 5vw;
+    word-spacing: 0.6vw;
+    letter-spacing: 0.3vw;
+}
+.main-img {
+    width: 80%;
+}
+.carl {
+position: relative;
+    height: 35vw;
+    width: 90%;
+    background-color: white;
+    border: 0.01px solid transparent;
+    border-bottom-left-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+    box-shadow: var(--shadow);
+overflow: hidden;
+border-top: 0;
+}
+.pei {
+position: absolute;
+right: 0;
+top: 0;
+translate: 20% -20%;
+height: 60vw;
+width: 60vw;
+background-color: black;
+border: 0.01px solid transparent;
+border-radius: 50%;
+}
+.carl-pei {
+    position: absolute;
+    bottom: 0;
+    right: 0vw;
+    width: 40vw;
+}
+.carlpei {
+    width: 48vw;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.carlpei h1 {
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ font-size: 2.5vw;
+}
+.carlpei h1:first-child {
+    padding-top: 5vw;
+} 
+.carlpei h1:last-child {
+    font-size: 2.8vw;
+padding-top: 1.5vw;
+}
+.carl-story {
+ position: absolute;
+ left: 0;
+    width: 36.9vw;
+    height: 100%;
+padding: 0 2.5vw;
+display: flex;
+flex-direction: column;
+/* background-color: red; */
+}
+.carl-story h1:first-child {
+    padding-top: 2.5vw;
+}
+.carl-story h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5vw;
+font-size: 2vw;
+width: 30vw;
+}
+.carl-story h1:nth-child(3) {
+    padding: 1.5vw 0;
+}
+.carl-story h6 {
+padding-top: 1vw;
+    font-size: 1vw;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+width: 30vw;
+line-height: 1.5vw;
+}
+.exp-carl {
+    margin: 1vw 0;
+    translate: 0 0;
+}
+.repair {
+    position: relative;
+    width: 100vw;
+    background-color: white;
+display: flex;
+justify-content: flex-end;
+height: 35vw;
+overflow: hidden;
+}
+.repair img {
+}
+.repair-gif {
+    position: absolute;
+right: 0;
+height: 100%;
+width: 40vw;
+overflow: hidden;
+display: flex;
+align-items: center;
+}
+.imp-stuffs {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 53vw;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+padding: 0 3vw;
+align-items: center;
+}
+.imp-stuffs h1 , .fcon-links a{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5vw;
+}
+.imp-stuffs h1:first-child {
+    padding-top: 3vw;
+}
+.cities {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cities-row {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.cities-row a {
+    width: 8vw;
+    display: flex;
+    align-items: center;
+padding: 0 2vw;
+}
+.cities-row a img {
+    width: 100%;
+}
+.exp-c {
+    width: fit-content;
+translate: 10vw 2vw;
+}
+.exp-c strong {
+    padding: 0 2vw;
+    color: #000;
+}
+.footer {
+    translate: 0 55px;
+    background-color: #181818;
+    height: fit-content;
+    padding-bottom: 2vw;
+    width: 100vw;
+    display: flex;
+--fl: 70%;
+}
+.flinks {
+    height: 90%;
+    width: var(--fl);
+    display: flex;
+justify-content: space-evenly;
+}
+.flinks a {
+    color: rgb(216, 216, 216) !important;    
+}
+.flinks-column {
+    height: 100%;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.flinks-column h1 , a {
+    font-size: 1.5vw;
+    width: fit-content;
+    white-space: nowrap;
+}
+.flinks-column h1 {
+    padding: 2.5vw 0;
+    padding-bottom: 1vw;
+    color: white;
+}
+.flinks-column a:hover {
+    color: white !important;
+}
+.flinks-column a {
+    padding: 0.5vw 0;
+}
+.fcon {
+    height: 100%;
+    width: calc(95% - var(--fl));
+    padding: 0 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.fcon h1 {
+    padding: 2vw 1vw;
+    padding-bottom: 1vw;
+    color: white;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.5vw;
+}
+.fcon input {
+    height: 3vw;
+    background-color: white;
+    border: 0.01px solid transparent;
+    border-radius: 10vh;
+}
+.sign {
+    height: 15vw;
+    width: 100%;
+}
+.touch {
+    position: relative;
+    width: 100%;
+}
+.touch input {
+    width: 100%;
+}
+.touch i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: -2vw -50%;
+font-size: 1.5vw;
+}
+.touch input::placeholder , .sign input::placeholder {
+    translate: 10% 0;
+    font-size: 1vw;
+
+}
+.sign input {
+    height: 3vw;
+    width: 100%;
+    border: 0.1vw solid black;
+    border-radius: 0;
+}
+.sign input::grammar-error {
+    color: red;
+}
+.sign input:first-child {
+    margin: 2vw 0;
+margin-bottom: 0.5vw;
+}
+.sign-option {
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+}
+.sign-option a , #fc {
+    height: 3vw;
+    width: 48%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black !important;
+    font-size: 1vw;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#fc{
+    width: -webkit-fill-available;
+  
+}
+.sign a:hover , #fc:hover{
+    background-color: rgb(243, 240, 240);
+}
+.f-con {
+    position: relative;
+    height: 5vw;
+    width: 100%;
+    background-color: #000;
+    translate: 0 55px;
+}
+.social {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.social i {
+    color: white;
+    font-size: 1.5vw;
+}
+.fcon-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: 50vw;
+align-items: center;
+justify-content: space-evenly;
+padding-left: 5vw;
+}
+.fcon-links a {
+    font-size: 1vw !important;
+    color: rgb(146, 146, 146) !important;
+    /* color: rgb(255, 255, 255) !important; */
+    padding: 0 1vw;
+}
+.fcon-links a:first-child {
+    padding-right: 2vw;
+}
+.fcon-links a:hover {
+text-decoration: underline;
+}
+.fcon-links a:first-child:hover {
+    text-decoration: none;
+}
+#sliderfix {
+    position: absolute;
+    z-index: -999;
+    height: 60%;
+    width: 100%;
+}
+#os-gif {
+}
+</style>
+</head>
+<body id="body" style="margin-top: 0 !important;">
+
+<section class="nav" id="nav">
+    <section class="nlogo">
+        <img src="https://i.ibb.co/VDWskKb/images-11-removebg-preview-1-transformed.png" alt="images-11-removebg-preview-1-transformed" border="0">
+    </section>
+<section class="dp">
+
+<section class="nlinks">
+    <a href="" class="home"><strong>HOME</strong></a>
+    <a href="" class="home"><strong>WARRENTY</strong></a>
+    <a href="" class="home"><strong>SERVICE CENTER</strong></a>
+    <a href="" class="home"><strong>CMF</strong></a>
+    <section class="dhome">
+    <strong>PHONE</strong>
+  <section class="dcon">
+   <section class="phones">
+<a href="" class="phone">
+<section class="phone-img">
+    <img src="https://i.ibb.co/2MGdxFC/301916-0-ztqb9c.png" alt="301916-0-ztqb9c" border="0">
+</section>
+<section class="phone-info">
+    <h1><strong>NOTHING PHONE 1</strong></h1>
+    <h1><strong>Q1 2022</strong></h1>
+</section>
+</a>
+<a href="" class="phone">
+    <section class="phone-img">
+        <img src="https://m.media-amazon.com/images/I/819VAShnDpL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="" srcset="">
+    
+    </section>
+    <section class="phone-info">
+        <h1><strong>NOTHING PHONE 2</strong></h1>
+        <h1><strong>Q3 2023</strong></h1>
+    </section>
+    </a>
+    <a href="" class="phone">
+        <section class="phone-img">
+            <img src="https://i.ibb.co/zXF9tRZ/Nothing2a.jpg" alt="Nothing2a" border="0">        
+        </section>
+        <section class="phone-info">
+            <h1><strong>NOTHING PHONE 2a</strong></h1>
+            <h1><strong>Q1 2024</strong></h1>
+        </section>
+        </a>
+</section>
+  </section><!--dhome end-->  
+</section>
+<section class="dhome">
+    <strong>AUDIO</strong>
+  <section class="dcon">
+    <section class="phones">
+        <a href="" class="phone">
+        <section class="phone-img">
+            <img src="https://www.91-img.com/pictures/mobile-accessories/nothing/nothing-ear-1-145467-large-1.jpg" alt="301916-0-ztqb9c" border="0">
+        </section>
+        <section class="phone-info">
+            <h1><strong>NOTHING EAR 1</strong></h1>
+            <h1><strong>Q3 2021</strong></h1>
+        </section>
+        </a>
+        <a href="" class="phone">
+            <section class="phone-img">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/x/m/v/-original-imagnydghgvy9huf.jpeg?q=20&crop=false" alt="" srcset="">
+            
+            </section>
+            <section class="phone-info">
+                <h1><strong>NOTHING EAR 2</strong></h1>
+                <h1><strong>Q1 2022</strong></h1>
+            </section>
+            </a>
+            <a href="" class="phone">
+                <section class="phone-img">
+                    <img src="https://cdn.inet.se/product/688x386/6306120_8.jpg" alt="Nothing2a" border="0">        
+                </section>
+                <section class="phone-info">
+                    <h1><strong>NOTHING EAR (A)</strong></h1>
+                    <h1><strong>Q2 2023</strong></h1>
+                </section>
+                </a>
+        </section>
+          </section>  
+</section>
+<section class="dhome">
+    <strong>PRODUCTS</strong>
+  <section class="dcon">
+    <section class="phones allp">
+        <a href="" class="phone pp">
+        <section class="phone-img">
+            <img src="https://www.91-img.com/pictures/mobile-accessories/nothing/nothing-ear-1-145467-large-1.jpg" alt="301916-0-ztqb9c" border="0">
+        </section>
+        <section class="phone-info">
+            <h1><strong>NOTHING EAR 1</strong></h1>
+            <h1><strong>Q3 2021</strong></h1>
+        </section>
+        </a>
+        <a href="" class="phone pp">
+            <section class="phone-img">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/x/m/v/-original-imagnydghgvy9huf.jpeg?q=20&crop=false" alt="" srcset="">
+            
+            </section>
+            <section class="phone-info">
+                <h1><strong>NOTHING EAR 2</strong></h1>
+                <h1><strong>Q1 2022</strong></h1>
+            </section>
+            </a>
+            <a href="" class="phone pp">
+                <section class="phone-img">
+                    <img src="https://cdn.inet.se/product/688x386/6306120_8.jpg" alt="Nothing2a" border="0">        
+                </section>
+                <section class="phone-info">
+                    <h1><strong>NOTHING EAR (A)</strong></h1>
+                    <h1><strong>Q2 2023</strong></h1>
+                </section>
+                </a>
+                <a href="" class="phone pp">
+                    <section class="phone-img">
+                        <img src="https://i.ibb.co/2MGdxFC/301916-0-ztqb9c.png" alt="301916-0-ztqb9c" border="0">
+                    </section>
+                    <section class="phone-info">
+                        <h1><strong>NOTHING PHONE 1</strong></h1>
+                        <h1><strong>Q1 2022</strong></h1>
+                    </section>
+                    </a>
+                    <a href="" class="phone pp">
+                        <section class="phone-img">
+                            <img src="https://m.media-amazon.com/images/I/819VAShnDpL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="" srcset="">
+                        
+                        </section>
+                        <section class="phone-info">
+                            <h1><strong>NOTHING PHONE 2</strong></h1>
+                            <h1><strong>Q3 2023</strong></h1>
+                        </section>
+                        </a>
+                        <a href="" class="phone">
+                            <section class="phone-img">
+                                <img src="https://cdn.inet.se/product/688x386/6306120_8.jpg" alt="Nothing2a" border="0">        
+                            </section>
+                            <section class="phone-info">
+                                <h1><strong>NOTHING EAR (A)</strong></h1>
+                                <h1><strong>Q2 2023</strong></h1>
+                            </section>
+                            </a>
+
+
+            </section>
+            <a href="" class="vps"><strong>VIEW ALL</strong></a>
+
+        </section>  
+        
+
+        </section>
+
+
+    <a class="acc" href=""><i class="fa-solid fa-user"></i></a>
+
+
+</section>
+
+
+</section>
+
+
+
+
+</section>    
+    
+<section class="slider" id="slider">
+<section id="sliderfix"></section>
+<section class="slider-con" id="sc1">
+    <iframe id="if1" src="https://www.youtube-nocookie.com/embed/-GpqBwisoS4?vq=hd1080&autoplay=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&mute=1&playlist=-GpqBwisoS4" width="560" height="315" title="Nothing Phone 1 Trailer" frameborder="0"></iframe>
+<section id="bar">
+    <section class="barp" id="barp"></section>
+</section>
+<a href=""></a>
+<section id="sc1n" class="scin" onpointerenter="sinfo(this)" onpointerleave="dsinfo(this)">
+ <section class="scn" id="scpd1">
+    <h1>NOTHING PHONE 1</h1>
+    <h1 id="dis">Q1 2022</h1>
+ </section>
+</section>
+</section>
+
+<section class="slider-con" id="sc2">
+    <iframe id="if2"  width="560" height="315" title="I" frameborder="0"></iframe><section id="bar">
+    <section class="barp" id="barp2"></section>
+</section>
+<a href=""></a>
+<section id="sc2n" class="scin" onpointerenter="sinfo(this)" onpointerleave="dsinfo(this)">
+    <section class="scn" id="scpd2">
+       <h1>NOTHING PHONE 2</h1>
+       <h1 id="dis2">Q3 2023</h1>
+    </section>
+   </section>
+</section>
+
+<section class="slider-con" id="sc3">
+<iframe id="ifr3" width="560" height="315" title="I" frameborder="0"></iframe>
+<section id="bar">
+    <section class="barp" id="barp3"></section>
+</section>
+<section id="fade"></section>
+<a href=""></a>
+<section id="sc3n" class="scin" onpointerenter="sinfo(this)" onpointerleave="dsinfo(this)">
+    <section class="scn" id="scpd3">
+       <h1>NOTHING PHONE 2a</h1>
+       <h1 id="dis2">Q1 2024</h1>
+    </section>
+   </section>
+</section>
+
+</section>
+    
+<section class="os" id="os">
+    <section class="os-bound"></section>
+    <section class="os-gif">
+        <img id="os-gif" src="https://i.ibb.co/bWTVJrD/km-20240426-480p-15f-20240426-175018.gif" alt="km-20240426-480p-15f-20240426-175018" border="0">
+    </section>
+ <section class="os-info">
+    <h1 id="os-dl">BASED OF NOTHING OS</h1>
+    <h6 id="os-para">"Welcome to "Nothing OS," your gateway to a computing experience stripped of excess. With a minimalist approach, it offers optimized performance without unnecessary clutter. Enjoy seamless navigation, robust security, and customizable features in a lightweight package. Embrace efficiency and simplicity with Nothing OS."</h6>
+<ul>
+    <li>Streamlined Performance: Optimize computing, no bloatware.</li> 
+    <li>Robust Security: Protect data with top-notch features.</li> 
+    <li>Minimalist Interface: Navigate clutter-free effortlessly.</li> 
+    <li>Customizable Experience: Tailor to preferences.</li> 
+    <li>Efficient Resource Management: Maximize hardware usage.</li> 
+    <li>Seamless Multitasking: Juggle tasks smoothly.</li>
+    <li>Enhanced Productivity: Stay focused, no distractions.</li>
+    
+</ul>
+<a href="" class="exp"><span id="expd"></span><strong>EXPLORE</strong></a>
+</section>   
+</section>
+
+<section class="glyph">
+    <section class="gabout">
+        <h1>GLYPH INTERFACE</h1>
+
+        <h6>
+            Discover "Nothing," where innovation meets elegance. Our smartphones boast transparent backs illuminated by LED lights, while below, witness the stunning visuals of our devices embodying the mesmerizing Glyph Interface, setting a new standard for captivating mobile experiences.
+        </h6>
+<!-- <ul>
+    <li>Innovative Transparency: Explore the Unique Design of Glyph Interface</li>
+    <li>Innovative Transparency: Explore the Unique Design of Glyph Interface</li>
+    <li>Innovative Transparency: Explore the Unique Design of Glyph Interface</li>
+</ul> -->
+
+<section class="sphone">
+    <section class="sphone-row">
+        <img src="https://rukminim1.flixcart.com/image/200/200/xif0q/mobile/u/m/b/-original-imagrdefbw6bhbjr.jpeg?q=90" alt="">
+        <img src="https://m.media-amazon.com/images/I/819VAShnDpL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="">
+    </section>
+    <section class="sphone-row">
+
+        <img src="https://m.media-amazon.com/images/I/712JKlXXJ5L.jpg" alt="">
+        <a href="" class="view">
+
+            <i class="fa-solid fa-caret-right"></i>
+            <i class="fa-solid fa-caret-right"></i>
+        </a>
+            
+    </section>
+        
+        </section>
+
+
+
+    </section>
+    <section class="glyph-heading">
+<section class="glyph-h">
+    <h1 class="gl-hea" id="wiex">NOTHING PHONE 1</h1>
+    <h1 class="gl-hea" >NOTHING PHONE 2</h1>
+    <h1 class="gl-hea">NOTHING PHONE 2a</h1>
+    <section class="glyph-indicator">
+        <section class="invisible-indicator" id="in-indi"></section>
+        <section class="visible-indicator" id="vi-indi"></section>
+    </section>
+</section>
+    </section>
+
+    <section class="gslider">
+        <section class="back">
+    <section id="bs"></section>
+    <i class="fa-solid fa-chevron-left" onclick="back_s()"></i>
+</section>
+<section class="next">
+    <i class="fa-solid fa-chevron-right" onclick="next_s()"></i>
+    <section id="ns"></section>
+</section>
+        <section class="rgslider">
+<section class="rrgslider" id="rrgslider">
+<section id="push"></section>
+<section class="gcon" id="g1">
+    <img src="https://i.ibb.co/fvh1qw7/km-20240426-1-480p-15f-20240426-211157.gif" alt="">
+</section>
+<section class="gcon" id="g2">
+    <img src="https://i.ibb.co/fvh1qw7/km-20240426-1-480p-15f-20240426-211157.gif" alt="">
+</section>
+<section class="gcon" id="g3">
+    <img src="https://i.ibb.co/wW3L0q1/km-20240427-480p-15f-20240427-005434.gif" alt="">
+
+</section>
+<section class="gcon" id="g4"></section>
+
+</section>
+
+        </section>
+
+    </section>
+
+    <section class="glyph-cir"></section>
+
+    
+
+
+
+
+
+
+
+</section>
+<!-- <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/LY3Ytg5/watchproo.png" alt="watchproo" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>WATCH PRO1</h1>
+</section>        
+</a> -->
+<section class="cmf">
+    <h1 class="cmf-heading">
+        <strong>CMF SUBBRAND</strong>
+    </h1>
+    <section class="cmf-iframe">
+        <iframe src="https://www.youtube.com/embed/00yFVJrOa1k?vq=hd1080&autoplay=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&mute=1&disablekb=1&playlist=00yFVJrOa1k" width="560" height="315" title="1" frameborder="0"></iframe>
+   <p></p>
+    </section>
+    <!-- <h1 class="cmf-heading"><strong>PRODUCTS</strong></h1> -->
+    <section class="cmf-pro-parent">
+    <section class="cmf-back">
+        <section id="cmf-bs"></section>
+        <i class="fa-solid fa-chevron-left" onclick="cmf_back()"></i>
+    </section>
+    <section class="cmf-next">
+        <section id="cmf-ns"></section>
+        <i class="fa-solid fa-chevron-right" onclick="cmf_next()"></i>
+    </section>
+<section class="cmf-slider" id="cmf-slider">
+<section id="cmf-pusher"></section>
+
+
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/LY3Ytg5/watchproo.png" alt="watchproo" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>WATCH PRO</h1>
+<strong>BUY NOW</strong>
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/cw4J4yY/budsproo.png" alt="budsproo" border="0">
+            </section>
+<section class="cm-pro-info">
+<h1>BUDS PRO</h1>
+<strong>BUY NOW</strong>
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/2sK5vbt/neckbandpro.png" alt="neckbandpro" border="0">
+            </section>
+<section class="cm-pro-info">
+<h1>NECKBAND PRO</h1>
+<strong>BUY NOW</strong>
+
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/j5yzLfm/charger45555555555555.png" alt="charger45555555555555" border="0">
+                </section>
+<section class="cm-pro-info">
+<h1>45WATT CHARGER</h1>
+<strong>BUY NOW</strong>
+
+</section>        
+</a>   
+<a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/vwzdcND/headphones.png" alt="headphones" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>HEADPHONE PRO</h1>
+<strong>BUY NOW</strong>
+
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/SJ2sdyr/charger-pad.png" alt="charger-pad" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>WIRELESS CHARGER</h1>
+<strong>BUY NOW</strong>
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/C8KLNbs/gmouse.png" alt="gmouse" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>GAMING MOUSE</h1>
+<strong>BUY NOW</strong>
+</section>        
+</a>   
+ <a href="" class="cm-pro">
+    <section class="cm-pro-img">
+        <img src="https://i.ibb.co/T0LPnrk/trigger.png" alt="trigger" border="0">
+        </section>
+<section class="cm-pro-info">
+<h1>GAMING TRIGGERS</h1>
+<strong>BUY NOW</strong>
+</section>        
+</a>   
+</section>
+ 
+</section>
+
+
+</section>
+
+</section>
+</section>
+<section class="design">
+    <h1 class="design-heading">SPEAKING THE LANGUAGE OF DESGIN</h1>
+    <img src="https://i.ibb.co/gzMZfcc/Screenshot-2024-05-10-190929-transformed.png" alt="Screenshot-2024-05-10-190929-transformed" border="0">
+</section>
+<section class="carl">
+    <section class="carl-story">
+        <h1>CO-FOUNDER OF NOTHING</h1>
+        <h1>CARL PEI</h1>
+<h6>In the ever-evolving landscape of technology, Carl Pei's departure from OnePlus in 2020 marked the genesis of a new era. Founding Nothing, Pei embarked on a journey to redefine consumer tech, culminating in the unveiling of their inaugural lineup—the Nothing Phone 1, Phone 2, and Phone 2a, alongside sleek True Wireless Stereo (TWS) earbuds. Each product bears the imprint of Pei's unwavering vision and commitment to innovation, signaling a paradigm shift in the industry. As Nothing continues to push boundaries and challenge conventions, Pei's journey—from OnePlus to Nothing—stands as a testament to the transformative power of ambition and creativity in shaping the future of technology.</h6>
+<a href="" class="exp exp-carl"><span id="expd"></span><strong>EXPLORE</strong></a>
+  
+</section>
+    <section class="pei"></section>
+    <!-- <section class="carlpei">
+        <h1>CO-FOUNDER OF</h1>
+        <h1>NOTHING</h1>
+        <h1>CARL PEI</h1>
+
+    </section> -->
+<section class="carl-pei">
+    <img src="https://i.ibb.co/rbsFk2Z/carl-bhai-removebg-preview.png" alt="carl-bhai-removebg-preview" border="0">
+</section>
+</section>
+
+<section class="repair">
+<section class="repair-gif">
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/826977121024307.60bddc997bd94.gif" alt="">
+</section>
+<section class="imp-stuffs">
+    <h1>OVER 300 SERVICE CENTERS</h1>
+    <h1> IN INDIA</h1>
+    <section class="cities">
+        <section class="cities-row">
+            <a href="">
+                <img src="https://i.ibb.co/XXwmKt3/hydrabad.jpg" alt="hydrabad" border="0">
+            </a>
+            <a href="">
+                <img src="https://i.ibb.co/yyXr3wN/kolkataa.png" alt="kolkataa" border="0">
+                                    </a>
+            <a href="">
+                <img src="https://i.ibb.co/BzVP0st/mumbai.jpg" alt="mumbai" border="0">
+                        </a>
+        </section>
+        <section class="cities-row">
+            <a href="">
+                <img src="https://i.ibb.co/x8gkWdV/banglore.jpg" alt="banglore" border="0">
+                        </a>
+            <a href="">
+                <img src="https://i.ibb.co/9ypDb0K/agraa.png" alt="agraa" border="0">
+                                    </a>
+            <a href="">
+                <img src="https://i.ibb.co/TMSM0Gv/suratt.png" alt="suratt" border="0">
+                                    </a>
+        </section>
+    </section>
+    <a href="" class="exp exp-c"><span id="expd"></span><strong>FIND SERVICE CENTER NEAR ME</strong></a>
+   
+</section>
+
+
+
+</section>
+
+<section class="footer">
+<section class="flinks">
+    
+<section class="flinks-column">
+    <h1>COMPANY</h1>
+    <a href="">About us</a>
+    <a href="">Careers</a>
+    <a href="">Community</a>
+    <a href="">News</a>
+    <a href="">Support</a>
+    <a href="">Press contact</a>
+    <a href="">Corporate</a>
+</section>
+<!-- <a href="about-us">About us</a>
+<a href="careers">Careers</a>
+<a href="community">Community</a>
+<a href="newsroom">Newsroom</a>
+<a href="customer-support">Customer Support</a>
+<a href="press-contact">Press contact</a>
+<a href="corporate">Corporate</a>
+<a href="products">Products</a>
+<a href="phone-2a">Phone 2(a)</a>
+<a href="phone-2">Phone 2</a>
+<a href="phone-1">Phone 1</a>
+<a href="ear-a">Ear (a)</a>
+<a href="accessories">Accessories</a>
+<a href="apparel">Apparel</a>
+<a href="sustainability">Sustainability</a>
+<a href="environment">Environment</a>
+<a href="accessibility">Accessibility</a>
+<a href="security">Security</a>
+<a href="support">Support</a>
+<a href="service-center">Service center</a>
+<a href="find-a-store">Find a store</a>
+<a href="vulnerability-report">Vulnerability report</a>
+<a href="contact-us">Contact us</a> -->
+
+<section class="flinks-column">
+    <h1>PRODUCTS</h1>
+    <a href="phone-2a">Phone 2(a)</a>
+    <a href="phone-2">Phone 2</a>
+    <a href="phone-1">Phone 1</a>
+    <a href="ear-a">Ear (a)</a>
+    <a href="accessories">Accessories</a>
+    <a href="apparel">Apparel</a>
+    </section>
+<section class="flinks-column">
+    <h1>SUSTAINABILITY</h1>
+    <a href="environment">Environment</a>
+    <a href="accessibility">Accessibility</a>
+    <a href="security">Security</a>
+</section>
+<section class="flinks-column">
+    <h1>SUPPORT</h1>
+    <a href="service-center">Service center</a>
+    <a href="find-a-store">Find a store</a>
+    <a href="vulnerability-report">Vulnerability report</a>
+    <a href="contact-us">Contact us</a>
+</section>
+
+</section>
+
+<section class="fcon">
+    <h1>STAY IN TOUCH</h1>
+    <section class="touch">
+        <i class="fa-solid fa-caret-right"></i>
+
+        <input type="search" name="" id="" placeholder="Email"> 
+    </section>
+<section class="sign">
+<input type="search" name="" id="" placeholder="Email">
+<input type="search" name="" id="" placeholder="Password">
+<section class="sign-option">
+    <a href="">SIGN IN</a>
+    <a href="">LOG IN</a>
+</section>
+<a href="" id="fc">FIND ACCOUNT</a>
+</section>
+
+</section>
+
+
+</section>
+<section class="f-con">
+<section class="fcon-links">
+<a href="">(INDIA)</a>
+    <a href="">Privacy policy</a>
+    <a href="">Warrnety policy</a>
+    <a href="">Acceptable use policy</a>
+    <a href="">User agreement</a>
+</section>  
+    <section class="social">
+      <a href="">
+          <i class="fa-brands fa-instagram"></i>
+        
+      </a>
+      <a href="">
+          <i class="fa-brands fa-x-twitter"></i>
+
+      </a>
+      <a href="">
+          <i class="fa-brands fa-youtube"></i>
+
+      </a>
+      <a href="">
+          <i class="fa-brands fa-discord"></i>
+
+      </a>
+      <a href="">
+          <i class="fa-brands fa-tiktok"></i>
+
+      </a>
+    </section>
+</section>
+
+<script src="Nothing-pc.js"></script>
+<script>
+    var a = document.getElementById('sc1');
+var b = document.getElementById('sc2');
+var c = document.getElementById('sc3');
+var d = 30000;
+var e = d * 2;
+var f = d * 3;
+var infos = 3000;
+document.getElementById('barp').style.width= "100%";
+document.getElementById('if1').onload = function if1() {
+    document.getElementById('barp').style.width= "100%";
+
+};
+setTimeout(function() {
+a.style.translate= "-110%";
+b.style.translate= "-100%";
+c.style.translate= "-100%";
+document.getElementById('sc2n').style.cssText= "visibility: visible; opacity: 1;";
+document.getElementById('if2').setAttribute('src', 'https://www.youtube.com/embed/w1h5ukOqOKs?vq=hd1080&autoplay=1&loop=1&modestbranding=1&mute=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=w1h5ukOqOKs')
+document.getElementById('if2').onload = function if2() {
+    document.getElementById('barp2').style.width= "100%";
+
+};
+}, d);
+setTimeout(function() {
+    a.style.translate= "-210%";
+    b.style.translate= "-210%";
+    c.style.translate= "-200%";
+    document.getElementById('sc3n').style.cssText= "visibility: visible; opacity: 1;";
+    document.getElementById('ifr3').setAttribute('src', 'https://www.youtube.com/embed/3fI0b0eYxFQ?vq=hd1080&autoplay=1&loop=1&mute=1&modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=3fI0b0eYxFQ')
+    document.getElementById('ifr3').onload = function if3() {
+        document.getElementById('barp3').style.cssText= "animation: barp3 207000ms infinite";
+
+    };
+    
+}, e);
+dis = document.getElementById('dis').clientHeight;
+dish = dis - dis ;
+setTimeout(function() {
+var element = document.querySelectorAll('.scn');
+
+element.forEach(function(elementf) {    
+elementf.style.transform = 'translateY(' + dis + 'px)'; 
+});
+}, infos);
+var scpd1 = document.getElementById('scpd1');
+var scpd2 = document.getElementById('scpd2');
+var scpd3 = document.getElementById('scpd3');
+function sinfo(iden) {
+    var ide = iden.id;
+    if (ide === 'sc1n') {
+scpd1.style.transform= 'translateY(' + dish + 'px)';
+}
+    if (ide === 'sc2n') {
+scpd2.style.transform= 'translateY(' + dish + 'px)';
+}
+    if (ide === 'sc3n') {
+scpd3.style.transform= 'translateY(' + dish + 'px)';
+}
+}
+function dsinfo(iden){
+var ide = iden.id;
+setTimeout(function() {
+if (ide === 'sc1n') {
+    scpd1.style.transform= 'translateY(' + dis + 'px)';
+}
+if (ide === 'sc2n') {
+    scpd2.style.transform= 'translateY(' + dis + 'px)';
+}
+if (ide === 'sc3n') {
+    scpd3.style.transform= 'translateY(' + dis + 'px)';
+}
+
+} , infos);
+}
+var sliderh = document.getElementById('slider').clientHeight;
+var navh = document.getElementById('nav').clientHeight;
+var allsv = sliderh + navh;
+var os = document.getElementById('os');
+os.style.marginTop= allsv + "px";
+
+var os_dl = document.getElementById('os-dl').clientHeight;
+// var os_para = document.getElementById('os-para');
+// os_para.style.width= os_dl + 'px';
+var g1 = document.querySelectorAll('.gcon');
+var g2 = g1.length;
+var g3 = document.getElementById('g1').clientWidth;
+var g4 = (g2 - 1) * g3;
+
+var g5 = document.getElementById('push');
+g5.style.width= g4 + 'px'
+setTimeout(function() {
+var g6 = g5.clientWidth;
+console.log(g5.clientWidth)
+
+var g7 = document.getElementById('rrgslider');
+var g8 = g4 + g6 + g3;
+g7.style.width= g8 + 'px';
+g7.style.right= g6 + 'px';
+var g7i = g7.getBoundingClientRect();
+
+}, 300);
+var ng2 = document.getElementById('push').clientWidth;
+var invis = 0;
+var i4w = 0;
+
+function next_s() {
+    var ng = document.getElementById('g1').clientWidth;
+    ng2 -= ng;
+    var twf = ng2;
+    document.getElementById('push').style.transition= '0.3s';
+    document.getElementById('push').style.width= twf - 1 + 'px';
+    document.getElementById('bs').style.visibility= 'hidden';
+    if (ng2 == 0) {
+        document.getElementById('ns').style.visibility= 'visible';
+    }
+    invis += i1w; 
+    i4w = invis;
+    i4.style.transition=  '0.3s'; 
+    i4.style.width= invis + 'px'; 
+    console.log('invis ' + invis)
+if (invis == ghe) {
+    document.getElementById('ns').style.visibility= 'visible';
+}
+}
+
+function back_s() {
+    var ng = document.getElementById('g1').clientWidth;
+    ng2 += ng;
+    document.getElementById('push').style.transition= '0.3s';
+    document.getElementById('push').style.width= ng2 + 'px';
+    document.getElementById('ns').style.visibility= 'hidden';
+    if (ng2 == g4) {
+        document.getElementById('bs').style.visibility= 'visible';
+    }
+    invis -= i1w;
+    i4w = invis;
+    i4.style.width= invis + 'px';
+    console.log(invis);
+}
+
+
+var delay = 100;
+var i1 = document.getElementById('wiex');
+var i1w = i1.clientWidth;
+var i2 = document.querySelectorAll('.gl-hea');
+var i2l = i2.length;
+var i3 = document.getElementById('vi-indi');
+var i4 = document.getElementById('in-indi');
+i3.style.width= i1w + 'px';
+var ghe = (i2l - 1) * i1w;
+
+
+var c1 = document.querySelectorAll('.cm-pro');
+var c1l = c1.length;
+var c2 = c1l * c1[0].clientWidth;
+var c3  = c1[0].clientWidth * 4;
+var c4 = c2 - c3;
+var c5 = document.getElementById('cmf-pusher');
+c5.style.width= c4 + 'px';
+var c6 = c5.clientWidth + c3;
+var c7 = document.getElementById('cmf-slider');
+c7.style.width= c6 + 'px';
+c7.style.right = c5.clientWidth + 'px';
+var c9 = c5.clientWidth;
+function cmf_next() {
+    c9 -= c1[0].clientWidth;
+    c5.style.width= c9 + 'px';
+    c5.style.transition='0.3s';
+document.getElementById('cmf-bs').style.visibility= 'hidden';    
+    if (c9 == 0) {
+        console.log('stop this')
+        document.getElementById('cmf-ns').style.visibility= 'visible';    
+    }
+}
+function cmf_back() {
+    c9 += c1[0].clientWidth;
+    c5.style.width= c9 + 'px';
+    c5.style.transition='0.3s';
+    document.getElementById('cmf-ns').style.visibility= 'hidden';    
+
+    if (c9 == c4) {
+        console.log('stop this tooooooooooooooooooooo')
+        document.getElementById('cmf-bs').style.visibility= 'visible';    
+
+    }
+}
+
+</script>
+
+</body>
+</html>
